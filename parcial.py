@@ -1,6 +1,6 @@
 from couchdb import *
 #conexión a la BD:
-
+#aqui tenemos el menu de insertar
 def insertar(db):
     print("1. Refugio")
     print("2. Animal")
@@ -30,7 +30,7 @@ def insertar(db):
     insertar()
 
     pass
-
+#esto es para digitar y consultar por NIT
 def consultar(db: couchdb.database ): 
     nit = input("Digite Nit para buscar: ")
     result = db.view("refugios", "NIT", key=nit)
@@ -39,7 +39,7 @@ def consultar(db: couchdb.database ):
     
     
     
-
+#esta se utiliza para actualizar los datos en un documento con la llave
 def update(db):
     print ("Actualizar datos de un documento") 
     iddoc = raw_input ("Indique el id del documento que desea actualizar : ")
@@ -54,7 +54,7 @@ def update(db):
     #print(doc_creado)
     
     pass
-
+#esto es para eliminar el documento con el ID
 def delete(db):
     # Elimina todos los documentos en una base de datos
     for i in range(len(db)):
@@ -74,7 +74,7 @@ def delete(db):
 
 # vistas del refugio
 
-
+#aqui intento hacer las vistas aunque no supe bien
 
 #view = db.create_view('my_view', 'function(doc) {
 #  emit(doc.nit, doc.rep_legal);
@@ -111,7 +111,7 @@ view = {
     }
 }
 db.save(view)
-
+#aqui tenemos datos para la base 
 #Operaciones del crud:
 # (1) Insert: creación de un documento
 #información de dos refugios:
